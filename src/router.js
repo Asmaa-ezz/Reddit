@@ -4,7 +4,8 @@ const { handlerSignUpPage, handlerSignUpData } = require('./handler/sign_up');
 const { handlerStaticFile, handlerCheckUser } = require('./handler/other_page');
 const { handlerError404 } = require('./handler/error');
 const { handlerAuthCheck, handlerSignOut, handlerAuthCheckID } = require('./handler/cookie');
-const { handlerPostCreatePage, handlerPostCreateData , handlerGitAllPost } = require('./handler/post');
+const { handlerPostCreatePage, handlerPostCreateData, handlerGitAllPost } = require('./handler/post');
+const { handlerProfileData, handlerProfilePage } = require('./handler/profile');
 
 const router = (request, response) => {
   const endpoint = request.url;
@@ -34,8 +35,13 @@ const router = (request, response) => {
   } else if (endpoint === '/post_create') {
     if (method === 'POST') handlerPostCreateData(request, response);
     else handlerPostCreatePage(request, response);
+  } else if (endpoint === '/profile') {
+    if (method === 'POST') handlerProfileData(request, response);
+    else handlerProfilePage(request, response);
   } else if (endpoint === '/git_all_post' && method === 'GET') {
     handlerGitAllPost(request, response);
+  } else if (endpoint === '/pro' && method === 'GET') {
+    handlerProfile(request, response);
   } else {
     handlerError404(request, response);
   }

@@ -4,14 +4,23 @@ const createElement = (parent, type, text) => {
   const element = document.createElement(type);
   if (type.toLowerCase() === 'i') {
     if (text.toLowerCase() === 'm') {
-      element.setAttribute('class', 'fa fa-minus-square fa-2x');
+      element.setAttribute('class', 'fa fa-minus-square fa-2x m');
       element.style.color = '#ff0000';
+      element.addEventListener('click', () => {
+        console.log('mmmmmmm');
+      });
     } else if (text.toLowerCase() === 'p') {
       element.setAttribute('class', 'fa fa-plus-square fa-2x');
       element.style.color = '#00ff00';
+      element.addEventListener('click', () => {
+        console.log('pppppp');
+      });
     } else {
       element.setAttribute('class', 'fa fa-comments fa-2x');
       element.style.color = '#0000ff';
+      element.addEventListener('click', () => {
+        console.log('cccccc');
+      });
     }
     parent.appendChild(element);
   } else if (type.toLowerCase() === 'a') {
@@ -58,6 +67,8 @@ const create = (parent, title, username, text) => {
 };
 
 const link = select('signout');
+const profile = select('profile');
+const home = select('home');
 const username = select('username');
 const butCreatePost = select('createPost');
 const content = select('content');
@@ -90,6 +101,25 @@ link.addEventListener('click', () => {
     .catch(err => alert(err.message));
 });
 
+profile.addEventListener('click', () => {
+  window.location = '/profile';
+});
+
+home.addEventListener('click', () => {
+  window.location = '/home';
+});
+
+
 butCreatePost.addEventListener('click', () => {
   window.location = '/post_create';
+});
+
+
+const btn = document.createElement('BUTTON'); // Create a <button> element
+const t = document.createTextNode('CLICK ME'); // Create a text node
+btn.appendChild(t); // Append the text to <button>
+document.body.appendChild(btn);
+
+btn.addEventListener('click', () => {
+  console.log('aaaaaaaaa');
 });

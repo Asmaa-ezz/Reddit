@@ -9,6 +9,21 @@
     <title>Create Post</title>
 </head>
 <body>
+
+<nav>
+    <a href="#" id="home">Home</a>
+    <div class="list">
+        <button class="list-btn">
+            <span id="username"></span>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="list-content">
+            <a href="#" id="profile">profile</a>
+            <a href="#" id="signout">sign out</a>
+        </div>
+    </div>
+</nav>
+
 <div class="container" id="content">
 
 <h1>Create Post</h1>
@@ -19,7 +34,8 @@
     </label>
 
     <label for="text">
-        <input type="text" id="text" placeholder="text" required>
+        <textarea   id="text" placeholder="text" required></textarea>
+        <!--<input type="text"  style="height: 150px ; text-align: justify-all" id="text" placeholder="text" required>-->
     </label>
     <br>
     <button type="submit" id="create">Create</button>
