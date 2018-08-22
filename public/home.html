@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<nav>
+    <a href="#home">Home</a>
+    <div class="list">
+        <button class="list-btn">
+            <span id="username"></span>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="list-content">
+            <a href="#">profile</a>
+            <a href="#" id="signout">sign out</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container" id="content">
+
+    <button type="submit" id="createPost" class="create-post">Create Post</button>
+
+
+        <div id="postDiv">
+            <din id="content" class="content">
+            </din>
+
+        </div>
+    </div>
+
+
+<script src="/public/js/logic.js"></script>
+<script src="/public/js/home.js"></script>
+    <script src="/public/js/fetch.js"></script>
+</body>
+</html>
